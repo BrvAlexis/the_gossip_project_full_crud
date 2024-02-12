@@ -1,0 +1,18 @@
+<h1>Bienvenue <%= @first_name %>!</h1>
+<p>Find me in app/views/home/show.html.erb</p>
+<p> Ici c'est notre super site de potins, il est chouette, non ?</p>
+<p>  
+  <% @gossips.each do |gossip| %> <%# gossips est un tableau d'objet ! %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= gossip.title %></h5>
+        <p class="card-text"><%= gossip.user.first_name %><br/>
+
+        </p>
+        <%= link_to "gossip", gossip_path(gossip)%> 
+        <%= link_to "autheur", profil_path(gossip)%> 
+      </div>
+    </div>     
+    <% end %> 
+</p>
+

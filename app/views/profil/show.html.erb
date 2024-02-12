@@ -1,0 +1,12 @@
+<h1>Profil#show</h1>
+<p>Find me in app/views/profil/show.html.erb</p>
+<p>
+
+first_name : <%= User.find(@id).first_name %><br/>
+last_name : <%= User.find(@id).last_name %><br/>
+description : <%= User.find(@id).description %><br/>
+email : <%= User.find(@id).email %><br/>
+age : <%= User.find(@id).age %><br/>
+city : <%= User.find(@id).city.name %><br/>
+
+</p>
