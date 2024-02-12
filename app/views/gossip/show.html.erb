@@ -1,8 +1,8 @@
 <h1>Potin</h1>
 <p>Find me in app/views/gossip/show.html.erb</p>
 
-<p> Autheur : <%= Gossip.find(@id).user.first_name %> </p>
-
+<p> <%= link_to "Autheur", profil_path(@id)%>: <%= Gossip.find(@id).user.first_name %> </p>
+ 
 <p>  Title : <%= Gossip.find(@id).title %> </p>
 <p> Contenu : <%= Gossip.find(@id).content %>
   

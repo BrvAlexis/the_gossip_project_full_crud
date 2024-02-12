@@ -2,11 +2,11 @@
 <p>Find me in app/views/profil/show.html.erb</p>
 <p>
 
-first_name : <%= User.find(@id).first_name %><br/>
-last_name : <%= User.find(@id).last_name %><br/>
-description : <%= User.find(@id).description %><br/>
-email : <%= User.find(@id).email %><br/>
-age : <%= User.find(@id).age %><br/>
-city : <%= User.find(@id).city.name %><br/>
+first_name : <%= Gossip.find(@id).user.first_name %><br/>
+last_name : <%= Gossip.find(@id).user.last_name %><br/>
+description : <%= Gossip.find(@id).user.description %><br/>
+email : <%= Gossip.find(@id).user.email %><br/>
+age : <%= Gossip.find(@id).user.age %><br/>
+city : <%= Gossip.find(@id).user.city.name %><br/>
 
 </p>
