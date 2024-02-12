@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'profil/show'
   get 'gossip/show'
+  root "home#show"
   get '/welcome', to: 'home#show'
   get '/welcome/:first_name', to: 'home#show'
   # get '/gossip', to: 'gossip#show'

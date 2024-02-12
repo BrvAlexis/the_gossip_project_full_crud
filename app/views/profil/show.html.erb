@@ -1,12 +1,15 @@
-<h1>Profil#show</h1>
-<p>Find me in app/views/profil/show.html.erb</p>
-<p>
-
-first_name : <%= Gossip.find(@id).user.first_name %><br/>
-last_name : <%= Gossip.find(@id).user.last_name %><br/>
-description : <%= Gossip.find(@id).user.description %><br/>
-email : <%= Gossip.find(@id).user.email %><br/>
-age : <%= Gossip.find(@id).user.age %><br/>
-city : <%= Gossip.find(@id).user.city.name %><br/>
-
-</p>
+<div class="my-5">
+  <div class="p-5 text-center bg-body-tertiary">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Profil</h1>
+      <p class="col-lg-8 mx-auto lead">
+        First_name : <%= Gossip.find(@id).user.first_name %><br/>
+        Last_name : <%= Gossip.find(@id).user.last_name %><br/>
+        Description : <%= Gossip.find(@id).user.description %><br/>
+        Email : <%= Gossip.find(@id).user.email %><br/>
+        Age : <%= Gossip.find(@id).user.age %><br/>
+        City : <%= Gossip.find(@id).user.city.name %><br/>
+      </p>
+    </div>
+  </div>
+</div>

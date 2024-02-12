@@ -1,17 +1,22 @@
-<h1>Bienvenue <%= @first_name %>!</h1>
-<p>Find me in app/views/home/show.html.erb</p>
-<p> Ici c'est notre super site de potins, il est chouette, non ?</p>
- 
+<div class="container px-4 py-0 " id="featured-3"> 
+  <div class="grid text-center px-5 py-3">
+    <h1>Bienvenue <%= @first_name %>!</h1>
+    <p>Find me in app/views/home/show.html.erb</p>
+    <p> Ici c'est notre super site de potins, il est chouette, non ?</p>
+    <p>On est au courant, il est tres bleu !</p>
+  </div>
+</div>
 
-  
-<% @gossips.each do |gossip| %> <%# gossips est un tableau d'objet ! %>    
-    
-    <div class="container py-0 " id="featured-3"> 
-      <div class="row py-3">
-        <div class="feature col-4">
+<% @gossips.each do |gossip| %> <%# gossips est un tableau d'objet ! %> 
+  <div class="container px-4 py-0 " id="featured-3">  
+       
+      <div class="grid text-center px-5 py-3">
+        <div class="feature">
+          
           <div class="feature-icon bg-primary bg-gradient">
             <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
           </div>
+          
           <h2><%= gossip.title %></h2>
           <p><%= gossip.user.first_name %></p>
           <%= link_to "gossip", gossip_path(gossip), class:"icon-link" %>
