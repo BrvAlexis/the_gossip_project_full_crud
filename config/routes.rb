@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
  
-  get 'profil/show'
+  
   
   root "home#show"
   get '/welcome', to: 'home#show'
   get '/welcome/:first_name', to: 'home#show'
   # get '/gossip', to: 'gossip#show'
+  resources :profil
   
-  get '/profil/:id', to: 'profil#show', as:"profil"
   get '/contact', to: "contact#show"
   get '/team', to: "team#show"
   resources :gossips

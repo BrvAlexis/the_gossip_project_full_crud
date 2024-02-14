@@ -7,15 +7,33 @@ class GossipsController < ApplicationController
     @id = params[:id]
     @gossip = Gossip.find(params[:id])
   end
+
+  def new
+    @gossip = Gossip.new
+  end
   
   def index
     @gossip = Gossip.all
   end
 
-  
-  def new
-    @gossip = Gossip.new
+  def edit
+    @gossip = Gossip.find(params[:id])
   end
+
+  def update
+    @gossip = Gossip.find(params[:id])
+    
+    if @gossip.update(gossip_params)
+  
+    
+    redirect_to root_path
+    else
+      render 'edit'
+    end
+
+  end
+  
+  
 
   def create
     
@@ -33,8 +51,9 @@ class GossipsController < ApplicationController
   private
 
     def gossip_params
-      params.permit(:title, :content)
-     end
+      params.require(:gossip).permit(:title, :content)
+    end
   
-
 end
+
+
