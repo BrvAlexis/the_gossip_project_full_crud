@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'gossips/new', to: 'gossips#new'
+  get 'gossips/create'
   get 'profil/show'
   get 'gossip/show'
   root "home#show"
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   get '/profil/:id', to: 'profil#show', as:"profil"
   get '/contact', to: "contact#show"
   get '/team', to: "team#show"
+  resources :gossips, only: [:new, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

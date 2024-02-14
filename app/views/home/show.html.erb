@@ -7,6 +7,19 @@
   </div>
 </div>
 
+    <% if notice.present? %>
+      <div class="alert alert-success">
+      <%= notice %>
+      </div>
+    <% end %>
+
+
+
+<div class="grid text-center px-5 py-3">
+  <%= link_to "Crée ton Potin !", new_gossip_path, class: "btn btn-primary btn-lg btn-block" %>
+</div>
+
+
 <% @gossips.each do |gossip| %> <%# gossips est un tableau d'objet ! %> 
   <div class="container px-4 py-0 " id="featured-3">  
        

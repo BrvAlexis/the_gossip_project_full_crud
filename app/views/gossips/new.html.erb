@@ -1,0 +1,33 @@
+<h1>Gossips#new</h1>
+<p>Find me in app/views/gossips/new.html.erb</p>
+
+<% if @gossip.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+      <ul>
+        <% @gossip.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+
+
+<%= form_tag(gossips_path, method: "post") do %>
+    <div class="form-group">
+      <%= label_tag :title, "Titre du potin" %>
+      <%= text_field_tag :title, nil, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+      <%= label_tag :content, "Contenu du potin" %>
+      <%= text_area_tag :content, nil, class: "form-control" %>
+    </div>
+  
+    <%= submit_tag "Créer le potin", class: "btn btn-primary" %>
+  <% end %>
+  
+  
+  

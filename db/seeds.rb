@@ -14,14 +14,16 @@ require "faker"
 end
 User.destroy_all
 cities = City.all
+  anonymous = User.create!(first_name: "anonymous", city:cities.sample)
 10.times do 
   user = User.create!(first_name: Faker::Name.first_name, last_name:Faker::Name.last_name, description:Faker::Superhero.descriptor, email:Faker::Internet.email, age:Faker::Number.decimal_part(digits: 2), city:cities.sample)
 end
 
+
 Gossip.destroy_all
 users = User.all
 20.times do
-  gossip = Gossip.create!(title:Faker::Movie.title , content:Faker::Quote.yoda , user: users.sample)
+  gossip = Gossip.create!(title:Faker::Movie.title.truncate(14) , content:Faker::Quote.yoda , user: users.sample)
 end
 
 Tag.destroy_all
