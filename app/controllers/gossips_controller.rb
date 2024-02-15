@@ -33,11 +33,16 @@ class GossipsController < ApplicationController
 
   end
   
+
+
   def destroy
     @gossip = Gossip.find(params[:id])
-    @gossip.destroy
+    if @gossip.destroy
+      flash[:success] = "Gossip détruit avec succès !"
+    else
+      flash[:error] = "Erreur lors de la suppression du Gossip : #{@gossip.errors.full_messages}"
+    end
     redirect_to root_path
-
   end
   
 

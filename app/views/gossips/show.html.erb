@@ -8,8 +8,12 @@
       <p class="lead">Auteur: <%= link_to @gossip.user.first_name, profil_path(@gossip.user) %></p>
       <p class="lead">Ville: <%= @gossip.user.city.name %></p>
       <p class="btn btn-danger">
-  <%= link_to "Supprimer", gossip_path(@gossip), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce potin ?" }, class: "text-white" %>
+      <a href="<%= root_path(@gossip) %>" data-method="delete" data-confirm="Êtes-vous sûr ?" class="text-white">
+  Supprimer
+</a>
+
 </p>
+
     </div>
     <div class="col-md-5 order-md-1">
       <img src="https://via.placeholder.com/500" alt="Image" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
