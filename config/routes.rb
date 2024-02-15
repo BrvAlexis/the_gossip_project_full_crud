@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/welcome/:first_name', to: 'home#show'
   # get '/gossip', to: 'gossip#show'
   resources :profil
-  
+  resources :home
   get '/contact', to: "contact#show"
   get '/team', to: "team#show"
   resources :gossips

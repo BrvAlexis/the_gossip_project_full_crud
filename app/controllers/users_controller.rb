@@ -10,7 +10,7 @@ class UsersController < ApplicationController
           redirect_to root_path, notice: 'Inscription réussie !'
         else
              # Ajoutez cette ligne pour afficher les erreurs
-    puts @user.errors.full_messages.inspect
+    
           render :new
         end
     end
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :description, :email, :age, :city_id, :password_digest)
+        params.require(:user).permit(:first_name, :last_name, :description, :email, :age, :city_id, :password, :password_confirmation)
     end
 
 

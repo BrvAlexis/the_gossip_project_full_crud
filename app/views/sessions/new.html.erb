@@ -1,0 +1,21 @@
+<h1>Sessions#new</h1>
+
+<%= form_tag sessions_path, method: :post, class: "form-inline" do %>
+    <div class="form-group">
+      <%= label_tag 'session[email]', "Email", class: "text-light mr-2" %>
+      <%= email_field_tag 'session[email]', nil, class: "form-control mr-2" %>
+    </div>
+  
+    <div class="form-group">
+      <%= label_tag 'session[password]', "Password", class: "text-light mr-2" %>
+      <%= password_field_tag 'session[password]', nil, class: "form-control mr-2" %>
+    </div>
+  
+    <div class="form-check">
+      <%= check_box_tag 'session[remember_me]', 1, false, class: "form-check-input" %>
+      <%= label_tag 'session[remember_me]', "Remember me", class: "form-check-label text-light" %>
+    </div>
+  
+    <%= submit_tag "Se connecter", class: "btn btn-primary" %>
+  <% end %>
+  

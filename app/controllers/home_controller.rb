@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
+  
+  
+
+  
   def show
     puts "$" * 60
     puts "Voici le message de l'URL :"
