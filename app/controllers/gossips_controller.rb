@@ -1,4 +1,6 @@
 class GossipsController < ApplicationController
+  before_action :authenticate_user
+  
   def show
     puts "$" * 60
     puts "Voici le message de l'URL :"
@@ -48,8 +50,7 @@ class GossipsController < ApplicationController
 
   def create
     
-    @gossip = Gossip.new(gossip_params)
-    @gossip.user = User.find_by(first_name: "anonymous")
+    @gossip = current_user.gossips.build(gossip_params)
   
     if @gossip.save # essaie de sauvegarder en base @gossip
       redirect_to root_path, notice: 'The super potin was successfully saved!'# si ça marche, il redirige vers la page d'index du site
@@ -65,6 +66,14 @@ class GossipsController < ApplicationController
       params.require(:gossip).permit(:title, :content)
     end
   
+  private
+
+    def authenticate_user
+      unless current_user
+        flash[:danger] = "Please log in."
+        redirect_to root_path
+      end
+    end
 end
 
 
