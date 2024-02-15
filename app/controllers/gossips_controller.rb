@@ -37,7 +37,7 @@ class GossipsController < ApplicationController
 
   def destroy
     @gossip = Gossip.find(params[:id])
-    if @gossip.destroy
+    if @gossip.destroy(@gossip)
       flash[:success] = "Gossip détruit avec succès !"
     else
       flash[:error] = "Erreur lors de la suppression du Gossip : #{@gossip.errors.full_messages}"
@@ -54,7 +54,7 @@ class GossipsController < ApplicationController
     if @gossip.save # essaie de sauvegarder en base @gossip
       redirect_to root_path, notice: 'The super potin was successfully saved!'# si ça marche, il redirige vers la page d'index du site
     else
-      render 'new'# sinon, il render la view new (qui est celle sur laquelle on est déjà)
+      render 'new' # sinon, il render la view new (qui est celle sur laquelle on est déjà)
     end
   end
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
-  
-  
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
   root "home#show"
   get '/welcome', to: 'home#show'
   get '/welcome/:first_name', to: 'home#show'

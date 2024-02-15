@@ -39,6 +39,10 @@
             <%= link_to "Team", team_path, class: "nav-link" %>
             <%# <a class="nav-link" href="/team">Team</a> %>
           </li>
+          <li class="nav-item">
+            <%= link_to "S'inscrire", new_user_path, class: "nav-link" %>
+            <%# <a class="nav-link" href="/users">Users</a> %>
+          </li>
         </ul>
       </div>
 
@@ -55,7 +59,8 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label text-light" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Connexion</button>
+    <button type="submit" class="btn btn-secondary">Déconnexion</button>
   </form>
     </nav>
 
